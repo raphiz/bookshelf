@@ -1,0 +1,32 @@
+html {
+    background-color: black;
+}
+.shelf .item * {
+  width: 230px;
+}
+
+.shelf {
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.shelf .item {
+  display: inline-block;
+  float:left;
+  text-align: center;
+  margin-left: 100px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 120%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.autor, .year {
+  color: #777;
+  font-size: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

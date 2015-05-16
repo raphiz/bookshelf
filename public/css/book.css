@@ -1,0 +1,92 @@
+html, body {
+    /*height: 100%;
+    width: 100%;*/
+    background-color: black;
+}
+#book{
+    margin-left: auto;
+    margin-right: auto;
+    /*width:918px;
+    height:650px;*/
+
+    /*width: 60%;*/
+    /*height: 400px;*/
+    /*box-shadow: 0px 0px 20px gray;*/
+    margin-top: 50px;
+}
+
+#book .turn-page{
+	/*
+	background-color:white;
+	*/
+	/*background-color:silver;*/
+	/*box-shadow: 0px 0px 10px gray;*/
+}
+
+
+#book .cover{
+	background:#333;
+}
+/*
+#book .cover h1{
+	color:white;
+	text-align:center;
+	font-size:50px;
+	line-height:500px;
+	margin:0px;
+}
+
+#book .loader{
+	background-image:url(loader.gif);
+	width:24px;
+	height:24px;
+	display:block;
+	position:absolute;
+	top:238px;
+	left:188px;
+}*/
+
+#book .data{
+	/*text-align:center;*/
+	font-size:40px;
+	color:#999;
+	line-height:500px;
+    background-color: none;
+}
+
+.odd .data {
+	text-align: right;
+}
+
+.even .data {
+	text-align: left;
+}
+#wrapper {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#progress {
+    background-color: white;
+    height: 10px;
+    margin-left: 2px;
+    margin-top: 30px;
+
+    -moz-border-radius: 5px;
+    border-radius: 3px;
+
+    -webkit-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    -moz-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    -o-transition:width 300ms ease-in-out, height 300ms ease-in-out;
+    transition:width 300ms ease-in-out, height 300ms ease-in-out;
+}
+
+
+.back {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    margin-left: 50px;
+    background-image: url(../images/back.svg);
+    background-size:cover;
+}
