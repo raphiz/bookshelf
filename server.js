@@ -1,5 +1,5 @@
 var express = require('express'),
-    fs = require('fs')
+    fs = require('fs'),
     ini = require('ini'),
     console = require('console')
 var app = express();
@@ -23,7 +23,7 @@ app.get('/books', function (req, res) {
     res.json(result);
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(8080, function () {
 
   var host = server.address().address;
   var port = server.address().port;
