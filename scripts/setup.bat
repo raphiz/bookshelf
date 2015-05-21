@@ -1,4 +1,6 @@
 @echo off
+
+echo Installiere abhängigkeiten
 :: Add Git to PATH
 set PATH=%PATH%;C:\Program Files\Git\bin\
 
@@ -7,5 +9,9 @@ echo Installation in %cd%
 
 cmd /C npm install
 
+echo Richte Autostart ein...
+xcopy "scripts\autostart.bat" "%appdata%\Microsoft\Windows\Start Menu\Programs\Startup"
+
 echo Installation komplett
+
 pause
