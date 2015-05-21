@@ -9,7 +9,7 @@ timeout /T 10 > nul
 
 echo "Starting Application...."
 cd %app%
-npm start
+start /B npm start
 
 :: TODO: Do so...
 
