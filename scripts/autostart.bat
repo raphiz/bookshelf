@@ -1,12 +1,14 @@
 :: Configuration
-set chromeExe=C:\Users\<username>\AppData\Local\Google\Chrome\Application\chrome.exe
-
+@echo off
+set chromeExe=C:\Program Files\Google\Chrome\Application\chrome.exe
+set app=C:\bookshelf-master\
 
 :: Wait until windows is ready....
-@echo off
 timeout /T 10 > nul
 
-echo "Starting nodejs app...."
+echo "Starting Application...."
+cd %app%
+npm start
 
 :: TODO: Do so...
 
