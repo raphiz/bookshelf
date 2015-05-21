@@ -1,6 +1,9 @@
-:: Configuration
 @echo off
+:: Add Git to PATH
+set PATH=%PATH%;C:\Program Files\Git\
+:: Where is google chrome installed?
 set chromeExe=C:\Program Files\Google\Chrome\Application\chrome.exe
+:: Where is the app?
 set app=C:\bookshelf-master\
 
 :: Wait until windows is ready....
