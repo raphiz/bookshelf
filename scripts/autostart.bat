@@ -1,6 +1,4 @@
 @echo off
-:: Where is google chrome installed?
-set chromeExe=C:\Program Files\Google\Chrome\Application\chrome.exe
 :: Where is the app?
 set app=C:\bookshelf-master\
 
@@ -18,4 +16,4 @@ timeout /T 10  > nul
 
 :: Lauch chrome in fullscreen
 echo "Starting chrome"
-start %chromeExe% -kiosk "http://localhost:8080"
+start chrome -kiosk "http://localhost:8080"
