@@ -1,2 +1,5 @@
 /* Hide the mouse cursor */
 * { cursor: none !important }
+
+/* No scrollbars */
+body {overflow:hidden;}
