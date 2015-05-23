@@ -2,8 +2,7 @@ var child_process = require("child_process"),
     fs = require("fs"),
     path = require("path"),
     util = require("util"),
-    rimraf = require("rimraf"),
-    process = require("process");
+    rimraf = require("rimraf");
 
 exports.call = function(cmd, params, opts) {
     // TODO: explode if exit code not OK
