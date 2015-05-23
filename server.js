@@ -1,3 +1,5 @@
+// TODO: download binarys if not yet here... (imagemagicks, poppler-utils)
+
 var express = require('express'),
     fs = require('fs'),
     ini = require('ini'),

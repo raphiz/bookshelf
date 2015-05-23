@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "postinstall" : "bower install"
+    "postinstall": "bower install"
   },
   "author": "Raphael Zimmermann",
   "license": "BSD",
   "dependencies": {
-    "express": "^4.12.3",
     "bower": "*",
-    "ini": "^1.3.3"
+    "express": "^4.12.3",
+    "ini": "^1.3.3",
+    "rimraf": "^2.3.4",
+    "unzip": "^0.1.11"
   }
 }
