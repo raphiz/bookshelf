@@ -45,3 +45,11 @@ exports.imageDimension = function(filename){
 exports.compareDimensions = function(first, second) {
     return (first[0] !== second[0] || first[1] !== second[1]);
 }
+
+exports.appendPath = function() {
+    // Append the bin directory to PATH on windows
+    if(process.platform === "win32") {
+        process.env["PATH"] = process.env["PATH"] + ";" + process.cwd() +  "\\bin\\";
+        console.log(process.env["PATH"]);
+    }
+}

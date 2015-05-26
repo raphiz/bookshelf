@@ -102,7 +102,7 @@ function createPdf(memory, working_dir, destination) {
     helpers.call('convert', args, {cwd: working_dir});
 }
 
-
+helpers.appendPath();
 resize(
         path.resolve("doc.pdf"), // Source 
         path.resolve("tmp/"), // Working directory
