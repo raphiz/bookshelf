@@ -7,9 +7,6 @@ var child_process = require("child_process"),
 exports.call = function(cmd, params, opts) {
     // TODO: explode if exit code not OK
     opts = opts || {}
-    if(process.platform == "win32"){
-        cmd = "bin/" + cmd + ".exe";
-    }
     var res = child_process.spawnSync(cmd, params, opts)
     //console.log(">>"+String(res.stderr));
     return res.stdout;
