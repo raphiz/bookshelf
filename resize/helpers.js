@@ -8,7 +8,6 @@ exports.call = function(cmd, params, opts) {
     // TODO: explode if exit code not OK
     opts = opts || {}
     var res = child_process.spawnSync(cmd, params, opts)
-    //console.log(">>"+String(res.stderr));
     return res.stdout;
 }
 
@@ -33,7 +32,6 @@ exports.imageName = function(zero, working_dir, idx){
 }
 
 exports.imageDimension = function(filename){
-    console.log(filename);
     var w = String(exports.call('identify', ['-format', '%w', filename])).trim(),
         h = String(exports.call('identify', ['-format', '%h', filename])).trim();
     return [w,h]
@@ -47,6 +45,5 @@ exports.appendPath = function() {
     // Append the bin directory to PATH on windows
     if(process.platform === "win32") {
         process.env["PATH"] = process.env["PATH"] + ";" + process.cwd() +  "\\bin\\";
-        console.log(process.env["PATH"]);
     }
 }

@@ -1,5 +1,4 @@
-var console = require("console"),
-    helpers = require("./helpers");
+var helpers = require("./helpers");
 
 exports.numberOfPages = function(doc){
      var re     = /Pages:\s*([0-9]*)/,
