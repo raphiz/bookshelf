@@ -42,8 +42,6 @@ function resize(source, working_dir, dimensionFromPage, ignore, memory, destinat
     
     helpers.cleanUpWorkspace(working_dir);
     
-    console.log(fs.existsSync('tmp/'));
-
     extractPages(source, working_dir);
     deleteIgnoredPages(zero, working_dir, ignore);
     

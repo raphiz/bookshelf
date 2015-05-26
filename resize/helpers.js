@@ -24,7 +24,7 @@ exports.cleanUpWorkspace = function(working_dir) {
     if(fs.existsSync(working_dir)) {
         rimraf.sync(working_dir);
     }
-    fs.mkdir(working_dir);
+    fs.mkdirSync(working_dir);
 }
 
 exports.imageName = function(zero, working_dir, idx){
