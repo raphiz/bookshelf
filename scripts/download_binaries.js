@@ -52,24 +52,26 @@ download('http://goo.gl/1uV3eh', function(downloaded){
     });
 });
 
-// Download and "install" imagemagick
-download('http://www.imagemagick.org/download/binaries/ImageMagick-6.9.1-2-Q16-x86-windows.zip', function(downloaded){
-    fs.createReadStream(downloaded)
-      .pipe(unzip.Parse())
-      .on('entry', function (entry) {
-        var fileName = entry.path;
-        
-        // Extract all binaries into the bin directory
-        if(fileName == "ImageMagick-6.9.1-2/identify.exe" || fileName == "ImageMagick-6.9.1-2/convert.exe"){
-            entry.pipe(fs.createWriteStream(destination  + fileName.split('/')[1]));
-        }else{
-            entry.autodrain();
-        }
-          
-       
-      })
-      .on('finish', function(){
-          fs.unlink(downloaded);
-          console.log("ImageMagick installed")
-      });
+// Binary originally provided by imagemagick.org
+// Download and "install" identify.exe
+download('http://goo.gl/OGrrK8', function(downloaded){
+    var source = fs.createReadStream(downloaded);
+    var dest = fs.createWriteStream('bin/identify.exe');
+    source.pipe(dest);
+    source.on('end', function() {
+        console.log("identify installed!")
+        fs.unlink(downloaded);
+    });
+});
+
+// Binary originally provided by imagemagick.org
+// Download and "install" convert.exe
+download('http://goo.gl/1MBVJS', function(downloaded){
+    var source = fs.createReadStream(downloaded);
+    var dest = fs.createWriteStream('bin/convert.exe');
+    source.pipe(dest);
+    source.on('end', function() {
+        console.log("convert installed!")
+        fs.unlink(downloaded);
+    });
 });
