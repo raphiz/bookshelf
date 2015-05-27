@@ -1,0 +1,42 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="vendor/normalize.css/normalize.css">
+        <link rel="stylesheet" href="css/base.css" type="text/css" />
+        <link rel="stylesheet" href="css/status.css" type="text/css" />
+
+	</head>
+
+   <body>
+    <div class="fadedScroller_fade"></div>
+
+    <pre class="status-box">
+
+
+    </pre>
+    <div class="refresh">Refresh</div>
+    <script type="text/javascript" src="vendor/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+        function refresh() {
+            $.ajax("log")
+            .done(function( data ) {
+                var box = $('.status-box');
+                box.html(data)
+                box.scrollTop(box[0].scrollHeight - box.height());
+            })
+            .error(function() {
+              // Go back to "home"
+              window.location.pathname = "index.html"
+            });
+        }
+        refresh();
+        $('.refresh').on('touchend mouseup touchcancel', refresh);
+        setInterval(refresh, 6000);
+    </script>
+</body>
+</html>

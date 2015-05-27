@@ -3,3 +3,7 @@
 
 /* No scrollbars */
 body {overflow:hidden;}
+
+html {
+    background-color: black;
+}

@@ -1,0 +1,53 @@
+.status-box {
+    padding-top: 20px;
+    margin-top: -50px;
+
+    color: white;
+    width: 50%;
+    max-height: 80vh;
+    z-index: -1;
+}
+.fadedScroller_fade {
+    content:'';
+    height: 50px;
+    width: 50%;
+    position:relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(251, 251, 251, 0) 100%);
+}
+
+.status-box, .refresh, .fadedScroller_fade {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.refresh {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background: rgba(255,255,255,1); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(255,255,255,1); 
+}
