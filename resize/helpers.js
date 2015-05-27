@@ -7,6 +7,11 @@ var child_process = require("child_process"),
 exports.call = function(cmd, params, opts) {
     // TODO: explode if exit code not OK
     opts = opts || {}
+
+    if(process.platform === "win32") {
+        cmd = path.join(process.cwd(), 'bin', cmd);
+    }
+
     var res = child_process.spawnSync(cmd, params, opts)
     return res.stdout;
 }
@@ -41,9 +46,3 @@ exports.compareDimensions = function(first, second) {
     return (first[0] !== second[0] || first[1] !== second[1]);
 }
 
-exports.appendPath = function() {
-    // Append the bin directory to PATH on windows
-    if(process.platform === "win32") {
-        process.env["PATH"] = process.env["PATH"] + ";" + process.cwd() +  "\\bin\\";
-    }
-}
