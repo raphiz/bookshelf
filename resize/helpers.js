@@ -16,6 +16,10 @@ exports.call = function(cmd, params, opts) {
     return res.stdout;
 }
 
+exports.log = function(msg) {
+    console.log('>>'+msg)
+    fs.appendFileSync('status.log', msg + "\n")
+}
 exports.fillZeros = function(numOfPages) {
     var zero = "";
     for (var i = 0; i < String(numOfPages).length ; i++) {

@@ -16,3 +16,15 @@ $.getJSON("books", function( data ) {
     }
     $('.overlay').hide();
 });
+
+function status() {
+    $.ajax("log")
+    .done(function( data ) {
+        setTimeout(status, 6000)
+    })
+    .error(function() {
+      //Great, it's done
+      $('.status').hide()
+    });
+}
+status();

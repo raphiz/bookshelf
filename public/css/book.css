@@ -81,12 +81,3 @@ html, body {
     transition:width 300ms ease-in-out, height 300ms ease-in-out;
 }
 
-
-.back {
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    margin-left: 50px;
-    background-image: url(../images/back.svg);
-    background-size:cover;
-}

@@ -7,3 +7,12 @@ body {overflow:hidden;}
 html {
     background-color: black;
 }
+
+.back {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    margin-left: 50px;
+    background-image: url(../images/back.svg);
+    background-size:cover;
+}
