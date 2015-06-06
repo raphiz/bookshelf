@@ -1,8 +1,8 @@
 # Bookstation
 
 The intention of this "bookstation" project is to allow visitors in museums to 
-browse through old books. There are thousands of free scanned books available on [archive.org](http://archive.org),
-[e-rara.ch](http://e-rara.ch) etc. - but no simple and cheap way to exhibit them. This tool does exactly this. But that's not all - 
+browse through old books. There are thousands of free scanned books available on [archive.org](https://archive.org/),
+[e-rara.ch](http://www.e-rara.ch/) etc. - but no simple and cheap way to exhibit them. This tool does exactly this. But that's not all - 
 it does also harmonize the dimensions of the scanned documents - which is is an issue with almost every
 scann.
 
