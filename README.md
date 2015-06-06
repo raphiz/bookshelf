@@ -2,10 +2,11 @@
 
 Idea: Evtl. Split PDF on the server? Might improve the performace & memory consumption on the client side
 
+TODO: Validate metadata!
 
 ## Installation
 ### Requirements
-* Nodejs
+* Nodejs == 0.12
 * NPM
 * Bower
 
@@ -29,5 +30,5 @@ cover=cover.jpg
 compiled=compiled_example.pdf
 original=example.pdf
 ignored=2,3,4
-dimensionsFrom=2
+dimensionsFrom=1
 memoryLimit=256

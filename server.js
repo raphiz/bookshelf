@@ -3,7 +3,6 @@
 var express = require('express'),
     fs = require('fs'),
     ini = require('ini'),
-    //loader = require("./loader"),
     console = require('console')
 var app = express();
 
@@ -35,7 +34,7 @@ app.get('/books', function (req, res) {
 });
 
 var spawn = require('child_process').spawn,
-    cmd    = spawn('node', ['./loader.js']);
+    cmd    = spawn('node', ['./lib/cache.js']);
 
 cmd.stderr.on('data', function (data) {
   console.log('Error during conversion: ' + data);
