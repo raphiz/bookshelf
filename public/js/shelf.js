@@ -17,14 +17,20 @@ $.getJSON("books", function( data ) {
     $('.overlay').hide();
 });
 
+var refresh = false;
 function status() {
     $.ajax("log")
     .done(function( data ) {
+        refresh = true;
         setTimeout(status, 6000)
     })
     .error(function() {
       //Great, it's done
       $('.status').hide()
+      
+      if (refresh === true) {
+          location.reload();
+      }
     });
 }
 status();
