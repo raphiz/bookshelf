@@ -5,3 +5,5 @@
 /bin/
 /status.log
 /cache
+/documents/*
+/documents/!.gitkeep
