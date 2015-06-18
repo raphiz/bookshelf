@@ -48,3 +48,7 @@ download('http://goo.gl/1MBVJS', destination + 'convert.exe');
 // Binary originally provided by imagemagick.org
 // Download and "install" vcomp100.dll
 download('http://goo.gl/GTvwtF', destination + 'vcomp100.dll');
+
+// Binary originally provided by https://www.fourmilab.ch/md5/
+// Download and "install" md5.exe
+download('http://goo.gl/z8Vzyd', destination + 'md5.exe');
