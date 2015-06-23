@@ -20,18 +20,28 @@ app.use('/log', express.static('status.log'));
 
 
 // List all available books and return them as json
+app.get('/book/:name', function (req, res) {
+    var book = req.params.name,
+        inipath = 'cache/' + book + '/info.ini',
+        config = ini.parse(fs.readFileSync(inipath, 'utf-8'))
+
+    config._path = book;
+
+    res.json(config);
+});
+
 app.get('/books', function (req, res) {
     var books = fs.readdirSync('cache');
     var result = [];
     for (var i = 0; i < books.length; i++) {
         var book = books[i],
             inipath = 'cache/' + book + '/info.ini';
-        
+
         if(
-            fs.statSync('cache/' + book).isDirectory() && 
+            fs.statSync('cache/' + book).isDirectory() &&
             fs.existsSync(inipath)
         ){
-    
+
             // Parse config (todo: make filesafe!)
             var config = ini.parse(fs.readFileSync(inipath, 'utf-8'))
             config._path = book;
