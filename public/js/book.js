@@ -6,20 +6,18 @@ var book = {
 	addPage : function(page, book) {
 		if (!book.turn('hasPage', page)) {
 			console.log("adding page " + page);
-			var element = $('<div />', {'class': 'page '+((page%2==0) ? 'odd' : 'even'), 'id': 'page-'+page})
-			element.html('<div class="data"></div>');
+			var element = $('<div />', {'class': 'page '+((page%2==0) ? 'odd' : 'even'), 'id': 'page-'+page}),
+				container = $('<div class="data"></div>');
+			element.append(container)
+			container.append($('<img />', {'src': 'documents/' + this.book + this.filename(page-1)}))
 			book.turn('addPage', element, page);
 		}
 	},
-	renderPage : function (num) {
-		if (!this.rendered[num]) {
-			console.log("rendering page " + num);
-			// TODO: append zeros!
-			var element = $('<img />', {'src': 'documents/' + this.book + '/page-' + (num-1) + '.png'})
-			var canvasElm = $('#page-'+num + ' .data').append(element);
-			// this.pdf.getPage(num).then(this.doRenderPage.bind(this));
-			this.rendered[num] = true;
-		}
+	filename: function(idx) {
+		zero = this.configuration.zero
+		idx = (String(zero) + String(idx)).slice(zero.length*-1)
+		return "/page-" + idx + ".png";
+
 	},
 	setup : function() {
 		this.book = this.getParameterByName('doc'); // Fabrica...
@@ -53,10 +51,9 @@ var book = {
 		book.turn({
 			acceleration: true,
 			pages: this.configuration.numOfPages,
-			gradients: false,
+			gradients: true,
 			when: {
 				turning: this.turning.bind(this),
-				turned: this.turned.bind(this)
 			}
 		});
 		// Bind arrow key navigation
@@ -85,14 +82,6 @@ var book = {
 		for (page = range[0]; page <= range[1]; page++) {
 			this.addPage(page, $('#book'));
 		};
-	},
-	turned : function(e, page) {
-		this.updateProgress(page);
-
-		var range = $('#book').turn('range', page);
-		for (page = range[0]; page<=range[1]; page++) {
-			this.renderPage(page);
-		}
 	},
 	onKeyDown : function(e) {
 		if (e.target && e.target.tagName.toLowerCase()!='input'){
