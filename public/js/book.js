@@ -112,12 +112,12 @@ var book = {
 		if(page % 2 === 0){
 			page +=1
 		}
-		page += (this.configuration.numOfPages % 1)-1
-		console.log(page)
-		percent = ((page)/this.configuration.numOfPages)*100
+		percent = ((page)/this.configuration.numOfPages)
+		if(page >= this.configuration.numOfPages){
+			percent = 1
+		}
 
-		// var percent = ((page+())/this.configuration.numOfPages)*100;
-		$("#progress").width(($("#book").width()/100)*percent);
+		$("#progress").width(($("#book").width())*percent);
 	},
 	getParameterByName : function(name) {
 		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
