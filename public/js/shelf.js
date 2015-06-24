@@ -10,7 +10,7 @@ $.getJSON("books", function( data ) {
             .append($('<div/>', {class: 'author', text: item.author}))
             .append($('<div/>', {class: 'year', text: item.year}))
             .on('click', function(){
-                window.location.href = 'browse.html?doc=' + basePath + item.file;
+                window.location.href = 'browse.html?doc=' + item._path;
             })
             .appendTo(".shelf");
     }
@@ -27,7 +27,7 @@ function status() {
     .error(function() {
       //Great, it's done
       $('.status').hide()
-      
+
       if (refresh === true) {
           location.reload();
       }
