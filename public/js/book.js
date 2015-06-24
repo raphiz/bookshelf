@@ -81,7 +81,7 @@ var book = {
 	},
 	goto : function(e){
 		var wrapper = $("#wrapper"),
-			posX = e.pageX - wrapper.position().left,
+			posX = e.pageX - parseInt(wrapper.css('margin-left').replace("px", "")),
 			percent = posX/wrapper.width(),
 			page = Math.round((this.configuration.numOfPages * percent)+1)-1;
 			if(page == 0){
