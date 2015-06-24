@@ -63,10 +63,12 @@ var book = {
 		});
 
 		//swipe gestures
-		Hammer($('body').get(0)).on('swipeleft', function(ev) {
+		body = $('body').get(0)
+		hammertime = Hammer(body);
+		hammertime.on('swipeleft', function(ev) {
 			$('#book').turn('next');
 		});
-		Hammer($('body').get(0)).on('swiperight', function(ev) {
+		hammertime.on('swiperight', function(ev) {
 			$('#book').turn('previous');
 		});
 
