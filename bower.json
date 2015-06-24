@@ -4,6 +4,6 @@
     "jquery": "2.1.4",
     "normalize.css": "3.0.3",
     "turn.js": "08c1f6599a",
-    "hammer.js": "~2.0.4",
+    "hammer.js": "~2.0.4"
   }
 }
