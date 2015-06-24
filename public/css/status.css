@@ -29,25 +29,3 @@
     text-align: center;
     border-radius: 5px;
 }
-
-
-/* Let's get this party started */
-::-webkit-scrollbar {
-    width: 8px;
-}
- 
-/* Track */
-::-webkit-scrollbar-track {
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-    background: rgba(255,255,255,1); 
-}
-::-webkit-scrollbar-thumb:window-inactive {
-	background: rgba(255,255,255,1); 
-}
