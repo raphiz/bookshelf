@@ -1,17 +1,22 @@
+body {overflow-y:auto;}
+
+
 .shelf .item * {
   width: 230px;
 }
 
 .shelf {
     color: white;
+    margin:0 auto;
     margin-top: 100px;
     margin-bottom: 100px;
+    text-align:center;
 }
 .shelf .item {
   display: inline-block;
-  float:left;
   text-align: center;
-  margin-left: 100px;
+  margin-left: 50px;
+  margin-right: 50px
 }
 
 .title {
