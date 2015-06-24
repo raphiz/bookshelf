@@ -43,13 +43,16 @@ html, body {
 #wrapper {
     margin-left: auto;
     margin-right: auto;
+    background-color: #444;
+    -moz-border-radius: 5px;
+    border-radius: 3px;
+    margin-top: 30px;
+
 }
 
 #progress {
     background-color: white;
     height: 10px;
-    margin-left: 2px;
-    margin-top: 30px;
 
     -moz-border-radius: 5px;
     border-radius: 3px;

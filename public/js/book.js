@@ -34,7 +34,6 @@ var book = {
 
 		// Optimize book size
 		book.width("70%");
-		console.log(book.width())
 		var maxHeight = (win.height() - 150),
 		 	height = this.configuration.ratio*(book.width()/2),
 			width = book.width()
@@ -42,8 +41,6 @@ var book = {
 			height = maxHeight;
 			width = this.configuration.ratio2*2*height;
 		}
-		// height  = 100;
-		// width = 100;
 		book.height(height);
 		book.width(width);
 		$("#wrapper").width(width);
@@ -54,6 +51,7 @@ var book = {
 			gradients: true,
 			when: {
 				turning: this.turning.bind(this),
+				turned: this.turned.bind(this)
 			}
 		});
 		// Bind arrow key navigation
@@ -72,8 +70,22 @@ var book = {
 			$('#book').turn('previous');
 		});
 
+
+		$("#progress").on('click', this.goto.bind(this))
+		$("#wrapper").on('click', this.goto.bind(this));
+
 		// Hide the overlay
 		$('.overlay').hide();
+	},
+	goto : function(e){
+		var wrapper = $("#wrapper"),
+			posX = e.pageX - wrapper.position().left,
+			percent = posX/wrapper.width(),
+			page = Math.round((this.configuration.numOfPages * percent)+1)-1;
+			if(page == 0){
+				page = 1
+			}
+			$('#book').turn("page", page);
 	},
 	turning : function(e, page, view) {
 		// Gets the range of pages that the book needs right now
@@ -82,6 +94,9 @@ var book = {
 		for (page = range[0]; page <= range[1]; page++) {
 			this.addPage(page, $('#book'));
 		};
+	},
+	turned : function(e, page) {
+		this.updateProgress(page);
 	},
 	onKeyDown : function(e) {
 		if (e.target && e.target.tagName.toLowerCase()!='input'){
@@ -94,7 +109,14 @@ var book = {
 	},
 
 	updateProgress: function(page) {
-		var percent = ((page+(this.configuration.numOfPages % 2))/this.configuration.numOfPages)*100;
+		if(page % 2 === 0){
+			page +=1
+		}
+		page += (this.configuration.numOfPages % 1)-1
+		console.log(page)
+		percent = ((page)/this.configuration.numOfPages)*100
+
+		// var percent = ((page+())/this.configuration.numOfPages)*100;
 		$("#progress").width(($("#book").width()/100)*percent);
 	},
 	getParameterByName : function(name) {
