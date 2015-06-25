@@ -3,14 +3,14 @@ $.getJSON("books", function( data ) {
     for (var i = 0; i < data.length; i++) {
         var item = data[i],
             basePath = 'documents/' + item._path + '/'
-
         $('<div/>', {class:'item'})
             .append($('<img>', {class: 'cover', src: basePath + item.cover}))
             .append($('<div/>', {class: 'title', text: item.title}))
             .append($('<div/>', {class: 'author', text: item.author}))
             .append($('<div/>', {class: 'year', text: item.year}))
+            .data('path', item._path)
             .on('click', function(){
-                window.location.href = 'browse.html?doc=' + item._path;
+                window.location.href = 'browse.html?doc=' + $(this).data('path');
             })
             .appendTo(".shelf");
     }

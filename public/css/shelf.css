@@ -13,6 +13,7 @@ body {overflow-y:auto;}
     text-align:center;
 }
 .shelf .item {
+  vertical-align: top;
   display: inline-block;
   text-align: center;
   margin-left: 50px;
