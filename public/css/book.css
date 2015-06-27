@@ -32,9 +32,23 @@ html, body {
 	background:#333;
 }
 
+#book .data{
+    background-color: #000;
+}
 #book .data img {
     width: 100%!important;
     height: 100%!important;
+    opacity: 0;
+
+}
+
+#book .data.loaded img{
+    -webkit-transition: opacity 400ms;
+    -moz-transition: opacity 400ms;
+    -ms-transition: opacity 400ms;
+    transition: opacity 400ms;
+
+    opacity: 1;
 }
 
 .odd .data {

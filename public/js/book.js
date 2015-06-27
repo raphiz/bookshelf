@@ -7,9 +7,15 @@ var book = {
 		if (!book.turn('hasPage', page)) {
 			console.log("adding page " + page);
 			var element = $('<div />', {'class': 'page '+((page%2==0) ? 'odd' : 'even'), 'id': 'page-'+page}),
-				container = $('<div class="data"></div>');
+				container = $('<div class="data"></div>', {id:'data-img-page-'+page});
 			element.append(container)
-			container.append($('<img />', {'src': 'documents/' + this.book + this.filename(page-1)}))
+			img = $('<img />', {id:'img-page-'+page, 'src': 'documents/' + this.book + this.filename(page-1)})
+			.imagesLoaded().done( function( instance ) {
+				console.log($(instance.images[0].img).parent().addClass('loaded'))
+			})
+
+
+			container.append(img)
 			book.turn('addPage', element, page);
 		}
 	},
