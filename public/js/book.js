@@ -76,8 +76,8 @@ var book = {
 			}
 		});
 		hammertime.on('swiperight', function(ev) {
-			i	f (book.turn("animating") === false) {
-				$('#book').turn('next');
+			if (book.turn("animating") === false) {
+				$('#book').turn('previous');
 			}
 		});
 
