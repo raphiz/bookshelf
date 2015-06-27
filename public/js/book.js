@@ -1,6 +1,5 @@
 var book = {
 	configuration : undefined,
-	scale : 0,
 	book : undefined,
 	rendered : [],
 	addPage : function(page, book) {
@@ -71,12 +70,12 @@ var book = {
 		body = $('body').get(0)
 		hammertime = Hammer(body);
 		hammertime.on('swipeleft', function(ev) {
-			if (book.turn("animating") === false) {
+			if (scale === 1 && book.turn("animating") === false) {
 				$('#book').turn('next');
 			}
 		});
 		hammertime.on('swiperight', function(ev) {
-			if (book.turn("animating") === false) {
+			if (scale === 1 && book.turn("animating") === false) {
 				$('#book').turn('previous');
 			}
 		});
