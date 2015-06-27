@@ -72,10 +72,14 @@ var book = {
 		body = $('body').get(0)
 		hammertime = Hammer(body);
 		hammertime.on('swipeleft', function(ev) {
-			$('#book').turn('next');
+			if (book.turn("animating") === false) {
+				$('#book').turn('next');
+			}
 		});
 		hammertime.on('swiperight', function(ev) {
-			$('#book').turn('previous');
+			if (book.turn("animating") === false) {
+				$('#book').turn('next');
+			}
 		});
 
 
