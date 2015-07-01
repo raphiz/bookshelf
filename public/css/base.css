@@ -1,7 +1,7 @@
 /* Hide the mouse cursor */
 * {
-    /*cursor: none !important;*/
-    touch-action: none;
+    cursor: none !important;
+    touch-action: pan-y;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
