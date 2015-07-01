@@ -1,13 +1,3 @@
-var posX=0, posY=0,
-    scale=1, last_scale,
-    last_posX=0, last_posY=0,
-    max_pos_x=0, max_pos_y=0;
-elm = $('body').get(0)
-hammertime = Hammer(elm)
-
-hammertime.get('pinch').set({
-    enable: true
-});
 var posX = 0,
     posY = 0,
     scale = 1,
@@ -17,27 +7,15 @@ var posX = 0,
     max_pos_x = 0,
     max_pos_y = 0,
     transform = "",
-    el = elm;
+    el = $('body').get(0),
+    hammertime = Hammer(el);
 
-hammertime.on('doubletap pan pinch panend pinchend', function(ev) {
-    if (ev.type == "doubletap") {
-        transform =
-            "translate3d(0, 0, 0) " +
-            "scale3d(2, 2, 1) ";
-        scale = 2;
-        last_scale = 2;
-        try {
-            if (window.getComputedStyle(el, null).getPropertyValue('-webkit-transform').toString() != "matrix(1, 0, 0, 1, 0, 0)") {
-                transform =
-                    "translate3d(0, 0, 0) " +
-                    "scale3d(1, 1, 1) ";
-                scale = 1;
-                last_scale = 1;
-            }
-        } catch (err) {}
-        el.style.webkitTransform = transform;
-        transform = "";
-    }
+hammertime.get('pinch').set({
+    enable: true
+});
+
+hammertime.on('pan pinch panend pinchend', function(ev) {
+
 
     //pan
     if (scale != 1) {
