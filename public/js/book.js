@@ -70,12 +70,12 @@ var book = {
 		body = $('body').get(0)
 		hammertime = Hammer(body);
 		hammertime.on('swipeleft', function(ev) {
-			if (scale === 1 && book.turn("animating") === false) {
+			if (scale <= 1 && book.turn("animating") === false) {
 				$('#book').turn('next');
 			}
 		});
 		hammertime.on('swiperight', function(ev) {
-			if (scale === 1 && book.turn("animating") === false) {
+			if (scale <=1 && book.turn("animating") === false) {
 				$('#book').turn('previous');
 			}
 		});
