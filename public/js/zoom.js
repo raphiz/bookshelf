@@ -8,13 +8,13 @@ var posX = 0,
     max_pos_y = 0,
     transform = "",
     el = $('body').get(0),
-    hammertime = Hammer(el);
+    hammert = Hammer(el);
 
-hammertime.get('pinch').set({
+hammert.get('pinch').set({
     enable: true
 });
 
-hammertime.on('pan pinch panend pinchend', function(ev) {
+hammert.on('pan pinch panend pinchend', function(ev) {
 
 
     //pan
@@ -52,8 +52,8 @@ hammertime.on('pan pinch panend pinchend', function(ev) {
 
     if (scale != 1) {
         transform =
-            "translate3d(" + posX + "px," + posY + "px, 0) " +
-            "scale3d(" + scale + ", " + scale + ", 1)";
+            "scale3d(" + scale + ", " + scale + ", 1) " +
+            "translate3d(" + posX + "px," + posY + "px, 0)";
     }
 
     if (transform) {
