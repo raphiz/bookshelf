@@ -33,9 +33,18 @@ fs.mkdirSync(destination);
 // Download and "install" pdfinfo
 download('http://goo.gl/Rfk6Tm', destination + 'pdfinfo.exe');
 
-// Binary originally provided by https://code.google.com/p/pdfbun/
+// Binary originally provided by http://blog.alivate.com.au/poppler-windows/
 // Download and "install" pdftoppm
-download('http://goo.gl/1uV3eh', destination + 'pdftoppm.exe');
+download('http://goo.gl/sSUGmg', destination + 'pdftoppm.exe');
+download('http://goo.gl/OKNJG9', destination + 'freetype6.dll');
+download('http://goo.gl/jmUN9R', destination + 'jpeg62.dll');
+download('http://goo.gl/YYX6oG', destination + 'libgcc_s_dw2-1.dll');
+download('http://goo.gl/r4MOlX', destination + 'libpng16-16.dll');
+download('http://goo.gl/mtvHxy', destination + 'libpoppler.dll');
+download('http://goo.gl/0zsOr3', destination + 'libstdc++-6.dll');
+download('http://goo.gl/yyQZRR', destination + 'libtiff3.dll');
+download('http://goo.gl/Al6TKZ', destination + 'zlib1.dll');
+
 
 // Binary originally provided by imagemagick.org
 // Download and "install" identify.exe
