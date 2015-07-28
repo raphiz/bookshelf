@@ -51,17 +51,6 @@ app.get('/books', function (req, res) {
     res.json(result);
 });
 
-var spawn = require('child_process').spawn,
-    cmd    = spawn('node', ['./lib/cache.js']);
-
-cmd.stderr.on('data', function (data) {
-  console.log('Error during conversion: ' + data);
-});
-
-cmd.on('close', function (code) {
-  console.log('Conversion completed ' + code);
-});
-
 
 var server = app.listen(8080, function () {
 

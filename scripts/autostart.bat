@@ -3,16 +3,17 @@
 set app=C:\bookshelf-master\
 
 :: Wait until windows is ready....
-timeout /T 10 > nul
+timeout /T 5 > nul
 
 echo "Starting Application...."
 cd %app%
 start /B npm start
 
-:: TODO: Do so...
+echo "Starting importer...."
+start node lib/cache.js 
 
 :: Wait again - till the app is running
-timeout /T 10  > nul
+timeout /T 5  > nul
 
 :: Lauch chrome in fullscreen
 echo "Starting chrome"
